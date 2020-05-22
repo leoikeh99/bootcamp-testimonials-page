@@ -1,55 +1,44 @@
-const next = $(".btn-next");
-const prev = $(".btn-prev");
+var text1 = $(".main-text");
+var text2 = $(".main-text2");
+var img1 = $(".img");
+var img2 = $(".img2");
 
 var counter = 0;
-
-console.log(document.querySelector(".img2"));
-$(next).click(function () {
+// transform:rotateY(180deg)
+$(".prev").click(function () {
   counter++;
   if (counter % 2 === 1) {
-    document.querySelector(".img2").style.display = "none";
-    document.querySelector(".img3").style.display = "block";
-    transOut("img3");
-    document.querySelector(".content").style.display = "none";
-    document.querySelector(".content2").style.display = "block";
-    fadeIn("content2");
+    $(".main-text").css("display", "none");
+    $(".main-text2").css("animationName", "fadeIn");
+    $(".main-text2").css("display", "block");
+    $(".img2").css("display", "none");
+    $(".img3").css("animationName", "rotate");
+    $(".img3").css("display", "block");
   } else {
-    document.querySelector(".img2").style.display = "block";
-    transOut("img2");
-    document.querySelector(".img3").style.display = "none";
-    document.querySelector(".content").style.display = "block";
-    fadeIn("content");
-    document.querySelector(".content2").style.display = "none";
+    $(".main-text").css("animationName", "fadeIn");
+    $(".main-text").css("display", "block");
+    $(".main-text2").css("display", "none");
+    $(".img2").css("animationName", "rotate");
+    $(".img2").css("display", "block");
+    $(".img3").css("display", "none");
   }
 });
 
-$(prev).click(function () {
+$(".next").click(function () {
   counter++;
   if (counter % 2 === 1) {
-    document.querySelector(".img2").style.display = "none";
-    document.querySelector(".img3").style.display = "block";
-    transOut("img3");
-    document.querySelector(".content").style.display = "none";
-    document.querySelector(".content2").style.display = "block";
-    fadeIn("content2");
+    $(".main-text").css("display", "none");
+    $(".main-text2").css("animationName", "fadeIn");
+    $(".main-text2").css("display", "block");
+    $(".img2").css("display", "none");
+    $(".img3").css("animationName", "rotate");
+    $(".img3").css("display", "block");
   } else {
-    document.querySelector(".img2").style.display = "block";
-    transOut("img2");
-    document.querySelector(".img3").style.display = "none";
-    document.querySelector(".content").style.display = "block";
-    fadeIn("content");
-    document.querySelector(".content2").style.display = "none";
+    $(".main-text").css("animationName", "fadeIn");
+    $(".main-text").css("display", "block");
+    $(".main-text2").css("display", "none");
+    $(".img2").css("animationName", "rotate");
+    $(".img2").css("display", "block");
+    $(".img3").css("display", "none");
   }
 });
-
-function transOut(element) {
-  document.querySelector(`.${element}`).style.animationDuration = "1s";
-  document.querySelector(`.${element}`).style.animationName = "out";
-  document.querySelector(`.${element}`).style.animationFillMode = "forwards";
-}
-
-function fadeIn(element) {
-  document.querySelector(`.${element}`).style.animationDuration = "3s";
-  document.querySelector(`.${element}`).style.animationName = "fadeIn";
-  document.querySelector(`.${element}`).style.animationFillMode = "forwards";
-}
